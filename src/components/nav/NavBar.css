@@ -1,12 +1,14 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    font-family: "Oswald", Arial, sans-serif;
+  font-size: 40px;
 }
 
 .navbar__logout {

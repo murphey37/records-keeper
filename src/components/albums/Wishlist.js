@@ -9,7 +9,7 @@ export const WishList = () => {
     
     const getAlbums = 
         () => {
-            fetch(`http://localhost:8088/albums?collectionAlbum=false`)
+            fetch(`http://localhost:8088/albums?collectionAlbum=false&_sort=artistName`)
                 .then(response => response.json())
                 .then((albumArray) => {
                     setAlbums(albumArray)
@@ -25,21 +25,23 @@ export const WishList = () => {
 
 
     return <>
-
-    <button onClick={() => navigate("/wishlist/create")}>Add Album</button>
-    <button onClick={() => navigate("/wishlist/gallery")}>View Gallery</button>
-    <button onClick={() => navigate("/wishlist/findAlbum")}>Find Album</button>
-    <h2>Your Wishlist, Sire!</h2>
+<article className="buttons">
+    <button className="btn" onClick={() => navigate("/wishlist/create")}>Add Album</button>
+    <button className="btn" onClick={() => navigate("/wishlist/gallery")}>View Gallery</button>
+    <button className="btn" onClick={() => navigate("/wishlist/findAlbum")}>Find Album</button>
+    </article>
+    <h2></h2>
 
     <article className="albums">
         {
           albums.map(
                 (album) => {
                     return <section key={album.id} className="album">
-                        <Link to={`/wishlist/${album.id}/edit`}> {album.albumName}</Link>
                         <div>{album.artistName}</div>
-                        <footer>{album.albumName}</footer>
-                        <img src={album.albumArt} alt={album.albumName}></img>
+                        <Link to={`/wishlist/${album.id}/edit`}> {album.albumName}</Link>
+                        <div></div>
+                    
+                        <img className="photos" src={album.albumArt} alt={album.albumName}></img>
                         <footer>
                         <DeleteButton album={album} get={getAlbums}/> 
                     </footer>

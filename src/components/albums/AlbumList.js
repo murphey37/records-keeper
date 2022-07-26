@@ -10,7 +10,7 @@ export const AlbumList = () => {
 
 
     const getAlbums = () => {
-        fetch(`http://localhost:8088/albums?collectionAlbum=true`)
+        fetch(`http://localhost:8088/albums?collectionAlbum=true&_sort=artistName`)
         .then(response => response.json())
         .then((albumArray) => {
             setAlbums(albumArray)
@@ -26,12 +26,12 @@ export const AlbumList = () => {
 
   
     return <>
-
-        <button onClick={() => navigate("/albums/create")}>Add Album</button>
-        <button onClick={() => navigate("/albums/gallery")}>View Album Art Gallery</button>
-        <button onClick={() => navigate("/findAlbum")}>Find Album</button>
-       
-    <h2>Your Record Collection, Sire!</h2>
+<article className="buttons">
+        <button className="btn" onClick={() => navigate("/albums/create")}>Add Album</button>
+        <button className="btn" onClick={() => navigate("/albums/gallery")}>View Album Art Gallery</button>
+        <button className="btn" onClick={() => navigate("/findAlbum")}>Find Album</button>
+        </article>
+    <h2></h2>
 
     
 
@@ -40,10 +40,11 @@ export const AlbumList = () => {
             albums.map(
                 (album) => {
                     return <section key={album.id} className="album">
-                        <Link to={`/albums/${album.id}/edit`}> {album.albumName}</Link>
                         <div>{album.artistName}</div>
-                        <footer>{album.albumName}</footer>
-                        <img src={album.albumArt} alt={album.albumName}></img>
+                        <Link to={`/albums/${album.id}/edit`}> {album.albumName}</Link>
+                        <div></div>
+                        {/* <footer>{album.albumName}</footer> */}
+                        <img className="photos" src={album.albumArt} alt={album.albumName}></img>
                         <footer>
                         <DeleteButton album={album} get={getAlbums}/> 
                     </footer>

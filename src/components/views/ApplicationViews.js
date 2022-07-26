@@ -12,12 +12,16 @@ import { WishListContainer } from "../albums/WishlistContainer"
 import { WishListForm } from "../albums/WishListForm"
 import { WishListGallery } from "../albums/WishListGallery"
 
+
 export const ApplicationViews = () => {
 	return (
         <Routes>
             <Route path="/" element={
                 <>
-                    <h1>Record's Keeper</h1>
+                                    <h1>Records Keeper</h1>
+
+                    <div></div>
+                                    
                     <div></div>
 
                     <Outlet />

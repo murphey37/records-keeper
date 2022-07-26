@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { AutoPopArtists } from "../Autopopulate/AutopopArtist"
+import { AutoPopAlbum } from "../Autopopulate/AutopopAlbum"
 
 
 export const AlbumCollectionForm = () => {
     /*
-        TODO: Add the correct default properties to the
+       Add the correct default properties to the
         initial state object
     */
+        const [selectedArtist, setSelectedArtist] = useState(null);
+        const [selectedMaster, setSelectedMaster] = useState(null)
+
     const [album, update] = useState({
         artistName: "",
         albumName: "",
 
     })
     /*
-        TODO: Use the useNavigation() hook so you can redirect
+    Use the useNavigation() hook so you can redirect
         the user to the album list
     */
         const [genres, setGenres] = useState([])
@@ -40,26 +45,18 @@ export const AlbumCollectionForm = () => {
         console.log("You done done it now")
 
         // TODO: Create the object to be saved to the API
-        /*
         
-        {
-            "id": 4,
-            "userId": 3,
-            "collectionAlbum": false,
-            "artistName": "The Mountain Goats",
-            "albumName": "Goths",
-            "yearReleased": 2017,
-            "albumArt": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/The_Mountain_Goats_-_Goths_-_2017.jpg/220px-The_Mountain_Goats_-_Goths_-_2017.jpg",
-            "genre": 1
-          }
-        */
+          const artist = selectedArtist
+          const master = selectedMaster
+         
+
         const albumToSendToAPI = {
             userId: recordsUserObject.id,
             collectionAlbum: true,
-            artistName: album.artistName,
-            albumName: album.albumName,
-            yearReleased: album.yearReleased,
-            albumArt: album.albumArt,
+            artistName: artist.title,
+            albumName: master.title.split('-')[1],
+            yearReleased: master.year,
+            albumArt: master.cover_image,
             genreId: parseInt(album.genreId)
 
         }
@@ -81,8 +78,17 @@ export const AlbumCollectionForm = () => {
 
     return (
         <form className="albumForm">
+
             <h2 className="albumForm__title">Add New Album</h2>
-            <fieldset>
+
+            <AutoPopArtists setSelectedArtist={setSelectedArtist}
+                            selectedArtist={selectedArtist}/>
+            <AutoPopAlbum artist={selectedArtist}
+                            setSelectedMaster={setSelectedMaster}
+                            selectedMaster={selectedMaster}/>
+            
+           
+            {/* <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Artist Name:</label>
                     <input
@@ -100,24 +106,8 @@ export const AlbumCollectionForm = () => {
                         } />
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Album Name:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Art For Sale"
-                        value={album.albumName}
-                        onChange={
-                            (event) => {
-                                const copy = { ...album }
-                                copy.albumName = event.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
+           
+         
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="yearReleased">Release Year:</label>
@@ -153,7 +143,7 @@ export const AlbumCollectionForm = () => {
                             }
                         } />
                 </div>
-            </fieldset>
+            </fieldset> */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="genre">Select Genre 1 :</label>

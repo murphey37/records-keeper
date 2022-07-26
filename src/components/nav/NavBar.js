@@ -7,10 +7,10 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/albums">Albums</Link>
+                <Link className="navbar__link" to="/albums">See Albums</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/wishlist">Wishlist</Link>
+                <Link className="navbar__link" to="/wishlist">See Wishlist</Link>
             </li>
             {
                 localStorage.getItem("records_user")
