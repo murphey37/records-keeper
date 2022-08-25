@@ -27,7 +27,7 @@ export const WishListForm = () => {
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/genres`)
+            fetch(`http://vast-eyrie-36954.herokuapp.com/genres`)
                 .then(response => response.json())
                 .then((genreArray) => {
                     setGenres(genreArray)
@@ -61,7 +61,7 @@ export const WishListForm = () => {
         }
 
         // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://localhost:8088/albums`, {
+        return fetch(`http://vast-eyrie-36954.herokuapp.com/albums`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -84,80 +84,6 @@ export const WishListForm = () => {
             <AutoPopAlbum artist={selectedArtist}
                             setSelectedMaster={setSelectedMaster}
                             selectedMaster={selectedMaster}/>
-           
-            {/* <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Artist Name:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Adam Ant"
-                        value={album.artistName}
-                        onChange={
-                            (event) => {
-                                const copy = { ...album }
-                                copy.artistName = event.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="description">Album Name:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Art For Sale"
-                        value={album.albumName}
-                        onChange={
-                            (event) => {
-                                const copy = { ...album }
-                                copy.albumName = event.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="yearReleased">Release Year:</label>
-                    <input
-                        required autoFocus
-                        type= "text"
-                        className="form-control"
-                        placeholder="1999"
-                        value={album.yearReleased}
-                        onChange={
-                            (event) => {
-                                const copy = { ...album }
-                                copy.yearReleased = event.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="albumArt">Album Art:</label>
-                    <input
-                        required autoFocus
-                        type= "text"
-                        className="form-control"
-                        placeholder="Add Link to Album Artwork"
-                        value={album.albumArt}
-                        onChange={
-                            (event) => {
-                                const copy = { ...album }
-                                copy.albumArt = event.target.value
-                                update(copy)
-                            }
-                        } />
-                </div>
-            </fieldset> */}
 
             <fieldset>
                 <div className="form-group">

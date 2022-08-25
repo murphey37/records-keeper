@@ -21,7 +21,7 @@ export const AutoPopAlbum = ({artist, selectedMaster, setSelectedMaster}) => {
     
     return axios.get(`https://api.discogs.com/database/search?q=${inputValue}&type=master&artist=${artist.title}&key=QOweiokWJRqHZcvyjksT&secret=dexKOwgmxPLTUVszUftstFAJHHOZvHHy`)
     .then(resultStuff);
-}; //https://api.discogs.com/database/search?q=Sky&type=release&artist=wilco&key=QOweiokWJRqHZcvyjksT&secret=dexKOwgmxPLTUVszUftstFAJHHOZvHHy
+}; 
 
 const resultStuff = (res) => {
     console.log(res)

@@ -35,7 +35,7 @@ const {id}=useParams()
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/albums/${id}`)
+            fetch(`http://vast-eyrie-36954.herokuapp.com/albums/${id}`)
                 .then(response => response.json())
                 .then((albumArray) => {
                     update(albumArray)
@@ -47,7 +47,7 @@ const {id}=useParams()
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/genres`)
+            fetch(`http://vast-eyrie-36954.herokuapp.com/genres`)
                 .then(response => response.json())
                 .then((genreArray) => {
                     setGenres(genreArray)
@@ -78,7 +78,7 @@ const {id}=useParams()
         }
 
         // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://localhost:8088/albums/${album.id}`, {
+        return fetch(`http://vast-eyrie-36954.herokuapp.com/albums/${album.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
