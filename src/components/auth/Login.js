@@ -10,7 +10,7 @@ export const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault()
 
-        return fetch(`http://vast-eyrie-36954.herokuapp.com/users?email=${email}`)
+        return fetch(`https://vast-eyrie-36954.herokuapp.com/users?email=${email}`)
             .then(res => res.json())
             .then(foundUsers => {
                 if (foundUsers.length === 1) {

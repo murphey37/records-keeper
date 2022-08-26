@@ -9,7 +9,7 @@ export const WishListGallery = () => {
 
     useEffect(
         () => {
-            fetch(`http://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false`)
                 .then(response => response.json())
                 .then((albumArray) => {
                     setAlbums(albumArray)

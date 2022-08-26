@@ -17,7 +17,7 @@ export const FindAlbum = ({ searchTermState }) => {
 
     useEffect(
         () => {
-            fetch(`http://vast-eyrie-36954.herokuapp.com/albums`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/albums`)
                 .then(response => response.json())
                 .then((albumsArray) => {
                     setAlbums(albumsArray)

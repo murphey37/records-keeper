@@ -7,7 +7,7 @@ export const Gallery = () => {
 
     useEffect(
         () => {
-            fetch(`http://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=true`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=true`)
                 .then(response => response.json())
                 .then((albumArray) => {
                     setAlbums(albumArray)

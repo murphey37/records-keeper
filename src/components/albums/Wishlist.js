@@ -9,7 +9,7 @@ export const WishList = () => {
     
     const getAlbums = 
         () => {
-            fetch(`http://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false&_sort=artistName`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false&_sort=artistName`)
                 .then(response => response.json())
                 .then((albumArray) => {
                     setAlbums(albumArray)

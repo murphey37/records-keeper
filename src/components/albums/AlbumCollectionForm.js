@@ -27,7 +27,7 @@ export const AlbumCollectionForm = () => {
 
     useEffect(
         () => {
-            fetch(`http://https://vast-eyrie-36954.herokuapp.com/genres`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/genres`)
                 .then(response => response.json())
                 .then((genreArray) => {
                     setGenres(genreArray)
@@ -62,7 +62,7 @@ export const AlbumCollectionForm = () => {
         }
 
         // TODO: Perform the fetch() to POST the object to the API
-        return fetch(`http://https://vast-eyrie-36954.herokuapp.com/albums`, {
+        return fetch(`https://vast-eyrie-36954.herokuapp.com/albums`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -11,7 +11,7 @@ export const Register = (props) => {
     let navigate = useNavigate()
 
     const registerNewUser = () => {
-        return fetch("http://vast-eyrie-36954.herokuapp.com/users", {
+        return fetch("https://vast-eyrie-36954.herokuapp.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -33,7 +33,7 @@ export const Register = (props) => {
 
     const handleRegister = (e) => {
         e.preventDefault()
-        return fetch(`http://vast-eyrie-36954.herokuapp.com/users?email=${customer.email}`)
+        return fetch(`https://vast-eyrie-36954.herokuapp.com/users?email=${customer.email}`)
             .then(res => res.json())
             .then(response => {
                 if (response.length > 0) {

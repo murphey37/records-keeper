@@ -17,7 +17,7 @@ export const FindWishListAlbum = ({ searchTermState }) => {
 
     useEffect(
         () => {
-            fetch(`http://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false`)
+            fetch(`https://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=false`)
                 .then(response => response.json())
                 .then((albumsArray) => {
                     setAlbums(albumsArray)

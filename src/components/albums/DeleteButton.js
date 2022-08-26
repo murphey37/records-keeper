@@ -15,7 +15,7 @@ export const DeleteButton = ({album, get }) => {
     const navigate = useNavigate()
 
     return <button onClick={() => {
-        fetch(`http://vast-eyrie-36954.herokuapp.com/albums/${album.id}`, {
+        fetch(`https://vast-eyrie-36954.herokuapp.com/albums/${album.id}`, {
             method: "DELETE"
         })
      

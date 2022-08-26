@@ -10,7 +10,7 @@ export const AlbumList = () => {
 
 
     const getAlbums = () => {
-        fetch(`http://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=true&_sort=artistName`)
+        fetch(`https://vast-eyrie-36954.herokuapp.com/albums?collectionAlbum=true&_sort=artistName`)
         .then(response => response.json())
         .then((albumArray) => {
             setAlbums(albumArray)
